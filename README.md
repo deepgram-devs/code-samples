@@ -1,6 +1,6 @@
-# Repo Name
+# Code Samples
 
-A repository template for open-source demos, guides and sample apps. Description here.
+This repository contains a collection of code samples which show how to make common requests Deepgram API in various languages.
 
 ## Development and Contributing
 
