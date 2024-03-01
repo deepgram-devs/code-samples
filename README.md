@@ -2,6 +2,10 @@
 
 This repository contains a collection of code samples which show how to make common requests Deepgram API in various languages.
 
+## Getting Started
+
+Read the README.md file in each language folder to learn how to run the files in that folder.
+
 ## Development and Contributing
 
 Interested in contributing? We ❤️ pull requests!
