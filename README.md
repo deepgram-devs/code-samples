@@ -1,6 +1,6 @@
 # Code Samples
 
-This repository contains a collection of code samples which show how to make common requests Deepgram API in various languages.
+This repository contains a collection of code samples which show how to make common requests to the Deepgram API in various languages.
 
 ## Getting Started
 
