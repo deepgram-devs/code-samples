@@ -2,6 +2,8 @@
 
 This repository contains a collection of code samples which show how to make common requests to the Deepgram API in various languages.
 
+These code examples do not use the Deepgram SDKs. If you would like to learn more about using Deepgram's SDKs, visit our [Developer Documentation](https://developers.deepgram.com/docs/deepgram-sdks).
+
 ## Getting Started
 
 Read the README.md file in each language folder to learn how to run the files in that folder.
