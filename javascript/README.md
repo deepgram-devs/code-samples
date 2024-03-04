@@ -1,4 +1,4 @@
-# Ruby
+# Javascript
 
 ## Install Dependencies
 
