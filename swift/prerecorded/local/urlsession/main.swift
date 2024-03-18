@@ -17,7 +17,7 @@ var request = URLRequest(url: url)
 request.httpMethod = "POST"
 
 // Set request headers
-request.setValue("Token YOUR_DEEPGRAM_API_KEY", forHTTPHeaderField: "Authorization") // Replace YOUR_DEEPGRAM_API_KEY with your actual API key
+request.setValue("Token DEEPGRAM_API_KEY", forHTTPHeaderField: "Authorization") // Replace YOUR_DEEPGRAM_API_KEY with your actual API key
 request.setValue("audio/wav", forHTTPHeaderField: "Content-Type")
 
 // Set request body with audio data
