@@ -11,7 +11,7 @@ audio_data = File.binread(audio_file_path)
 
 # Define the headers
 headers = {
-  'Authorization' => 'Token YOUR_DEEPGRAM_API_KEY', # Replace YOUR_DEEPGRAM_API_KEY with your actual API key
+  'Authorization' => 'Token DEEPGRAM_API_KEY', # Replace YOUR_DEEPGRAM_API_KEY with your actual API key
   'Content-Type' => 'audio/wav'
 }
 
