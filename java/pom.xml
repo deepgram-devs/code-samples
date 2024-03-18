@@ -32,6 +32,8 @@
               <sources>
                 <source>prerecorded/local/httpURLConnection</source> 
                 <source>prerecorded/remote/okhttp3</source>
+                <source>TTS/HttpClient</source>
+                <source>TTS/okhttp3</source>
                 
               </sources>
             </configuration>  
