@@ -11,7 +11,7 @@ request = Net::HTTP::Post.new(uri)
 # Set the headers
 request.content_type = 'application/json'
 request['Accept'] = 'application/json'
-request['Authorization'] = 'Token YOUR_API_KEY'
+request['Authorization'] = 'Token DEEPGRAM_API_KEY'
 
 # Set the request body with a JSON payload containing the UR
 request.body = JSON.dump({

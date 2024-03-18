@@ -6,7 +6,7 @@ url = 'https://api.deepgram.com/v1/listen'
 # Define headers
 headers = {
   'Accept' => 'application/json',
-  'Authorization' => 'Token YOUR_DEEPGRAM_API_KEY',
+  'Authorization' => 'Token DEEPGRAM_API_KEY',
   'Content-Type' => 'application/json'
 }
 

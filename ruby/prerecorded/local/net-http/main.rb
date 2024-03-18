@@ -17,7 +17,7 @@ http.use_ssl = true
 request = Net::HTTP::Post.new(url)
 
 # Set request headers
-request["Authorization"] = "Token YOUR_DEEPGRAM_API_KEY" # Replace YOUR_DEEPGRAM_API_KEY with your actual API key
+request["Authorization"] = "Token DEEPGRAM_API_KEY" # Replace YOUR_DEEPGRAM_API_KEY with your actual API key
 request["Content-Type"] = "audio/wav"
 
 # Set request body with audio data

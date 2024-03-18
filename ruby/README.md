@@ -10,7 +10,7 @@ bundle install
 
 ## Update the Code
 
-Replace the placeholder code such as `YOUR_DEEPGRAM_API_KEY` with your own information.
+Replace the placeholder code such as `DEEPGRAM_API_KEY` with your own information.
 
 ## Run the Files
 
