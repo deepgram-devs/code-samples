@@ -3,3 +3,8 @@ javascript/node_modules/
 
 # Java
 target/
+
+#Csharp
+
+**/bin/
+**/obj/
