@@ -8,7 +8,7 @@ Replace the placeholder code such as `DEEPGRAM_API_KEY` with your own informatio
 
 Compile the code in the `java` folder by running the following. You will see a `target` folder created with the compiled classes.
 
-```
+```bash
 mvn compile
 ```
 
@@ -18,6 +18,6 @@ Run the command `mvn exec:java -Dexec.mainClass="<PATH>.Main"`. Be sure to add e
 
 For example, this runs the `Main.java` file within `java/prerecorded/local/httpURLConnection`:
 
-```
+```bash
 mvn exec:java -Dexec.mainClass="prerecorded.local.httpURLConnection.Main"
 ```
