@@ -9,4 +9,4 @@ languages:
   # - "python"
   # - "ruby"
   # - "rust"
-  # - "swift"
+  - "swift"
