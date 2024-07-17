@@ -1,4 +1,4 @@
-name: Generate Documentation
+name: CI
 
 on:
   push:
@@ -6,33 +6,39 @@ on:
       - main
 
 jobs:
-  generate-docs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Git user
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.x"
+          python-version: 3.x
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Run generate_docs.py
+      - name: Generate documentation
+        run: python scripts/generate_docs.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          python scripts/generate_docs.py
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
           git add .
-          git commit -m 'Update documentation with code samples and descriptions'
-          git push origin main
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update documentation with code samples and descriptions"
+            git push origin main
+          fi
