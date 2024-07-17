@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API with Local Audio File and libcurl in C++
+
+**Title:** Converting Local Audio File to Text using Deepgram API and libcurl in C++
+
+**Code Sample:** speech-to-text/prerecorded/local/libcurl/cplus_local.cpp
+
+**Description:** This C++ code uses the libcurl library to send a local audio file to the Deepgram API for speech-to-text conversion. It initializes libcurl, sets the request URL and headers, reads the audio file as binary data, and sends it as the request data. It then performs the request and checks for any errors.
+
 ### speech-to-text/prerecorded/local/libcurl/cplus_local.cpp
 
 ```cpp
@@ -64,6 +72,14 @@ int main() {
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with C++ and libcurl
+
+**Title:** Speech-to-Text Conversion for Remote Pre-recorded Audio Files
+
+**Code Sample:** speech-to-text/prerecorded/remote/libcurl/cplus_remote.cpp
+
+**Description:** This C++ code uses the libcurl library to send a HTTP request to Deepgram's API. It converts a remote pre-recorded audio file (specified by a URL) into text. The code includes initialization of libcurl, setting request URL and headers, performing the request and error checking.
+
 ### speech-to-text/prerecorded/remote/libcurl/cplus_remote.cpp
 
 ```cpp
@@ -112,6 +128,14 @@ int main() {
 }
 
 ```
+
+## Text-to-Speech Conversion using Deepgram API in C++
+
+**Title:** Text-to-Speech Conversion with Deepgram API
+
+**Code Sample:** text-to-speech/libcurl/cplus_tts.cpp
+
+**Description:** This C++ code uses the libcurl library and Deepgram API to convert text into speech. It sends a HTTP request to the Deepgram API with the text to be converted and saves the response (the speech version of the text) as an MP3 file.
 
 ### text-to-speech/libcurl/cplus_tts.cpp
 

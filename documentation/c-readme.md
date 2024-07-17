@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API with C and libcurl
+
+**Title:** Converting Local Audio File to Text using Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/local/libcurl/c_local.c
+
+**Description:** This C program uses the libcurl library to send a local audio file to the Deepgram API for speech-to-text conversion. The code initializes libcurl, sets request headers, reads the audio file into a buffer, and sends the audio data to the Deepgram API. It then checks for errors and cleans up.
+
 ### speech-to-text/prerecorded/local/libcurl/c_local.c
 
 ```c
@@ -67,6 +75,14 @@ int main(void) {
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with libcurl in C
+
+**Title:** Converting Remote Pre-recorded Speech to Text
+
+**Code Sample:** speech-to-text/prerecorded/remote/libcurl/c_remote.c
+
+**Description:** This C code uses the libcurl library to send a HTTP request to the Deepgram API. It sets the necessary headers and sends a JSON payload containing the URL of a pre-recorded audio file. The Deepgram API then processes this audio file and returns a transcription.
+
 ### speech-to-text/prerecorded/remote/libcurl/c_remote.c
 
 ```c
@@ -112,6 +128,14 @@ int main(void) {
 }
 
 ```
+
+## Text-to-Speech Conversion using Deepgram API and libcurl in C
+
+**Title:** Converting Text to Speech Using Deepgram API and libcurl in C
+
+**Code Sample:** text-to-speech/libcurl/c_tts.c
+
+**Description:** This C code uses the Deepgram API and the libcurl library to convert a hardcoded text string into speech. The output is saved as an MP3 file. The program initializes libcurl, sets the request headers, URL, and data, performs the request, and then cleans up.
 
 ### text-to-speech/libcurl/c_tts.c
 

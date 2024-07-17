@@ -1,3 +1,11 @@
+## Real-Time Speech-to-Text Conversion with Deepgram API using WebSockets
+
+**Title:** Real-Time Speech-to-Text Conversion
+
+**Code Sample:** speech-to-text/streaming/threading/main.py
+
+**Description:** This Python script uses the Deepgram API to convert real-time audio stream from a URL into text transcripts. It uses WebSocketApp from the websocket library to establish a WebSocket connection with Deepgram's 'listen' endpoint. The audio stream is fetched using the requests library and sent to the WebSocket in chunks. The received messages from the WebSocket are then processed to extract the transcripts. Threading is used to handle the audio streaming concurrently with the WebSocket connection.
+
 ### speech-to-text/streaming/threading/main.py
 
 ```python
@@ -62,6 +70,14 @@ ws = WebSocketApp(ws_url, on_open=on_open, on_message=on_message, on_close=on_cl
 ws.run_forever()
 
 ```
+
+## Real-time Speech-to-Text Conversion using Deepgram WebSocket API
+
+**Title:** Real-time Speech-to-Text Conversion
+
+**Code Sample:** speech-to-text/streaming/asyncio/main.py
+
+**Description:** This Python script uses the asyncio and aiohttp libraries to establish a WebSocket connection with the Deepgram API. It streams audio from a live BBC radio broadcast and sends it to the Deepgram API for real-time transcription. The transcriptions are then printed to the console.
 
 ### speech-to-text/streaming/asyncio/main.py
 
@@ -132,6 +148,14 @@ if __name__ == "__main__":
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API
+
+**Title:** Converting Pre-recorded Local Audio to Text with Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/local/requests/main.py
+
+**Description:** This script uses the Deepgram API to convert a pre-recorded local audio file to text. It sends a POST request with the audio file to the Deepgram API endpoint and prints the response in JSON format.
+
 ### speech-to-text/prerecorded/local/requests/main.py
 
 ```python
@@ -153,6 +177,14 @@ with open("/path/to/youraudio.wav", "rb") as audio_file:
 
 print(response.json())
 ```
+
+## Speech-to-Text Conversion using Deepgram API with Local Audio Files
+
+**Title:** Converting Local Audio Files to Text with Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/local/http-client/main.py
+
+**Description:** This Python script uses the Deepgram API to convert a local audio file to text. It reads the audio file as binary data, sends it to the Deepgram API via a POST request, and prints the response. The Deepgram API key and audio file path are required inputs.
 
 ### speech-to-text/prerecorded/local/http-client/main.py
 
@@ -198,6 +230,14 @@ conn.close()
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API
+
+**Title:** Converting Pre-recorded Remote Audio to Text with Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/remote/requests/main.py
+
+**Description:** This code uses the Deepgram API to convert a pre-recorded remote audio file (spacewalk.wav) into text. It sends a HTTP request with necessary headers and data, and prints the response in JSON format.
+
 ### speech-to-text/prerecorded/remote/requests/main.py
 
 ```python
@@ -220,6 +260,14 @@ response = requests.post(url, headers=headers, json=data)
 
 print(response.json())
 ```
+
+## Speech-to-Text Conversion using Deepgram API
+
+**Title:** Converting Pre-recorded Remote Audio to Text using HTTP Client in Python
+
+**Code Sample:** speech-to-text/prerecorded/remote/http-client/main.py
+
+**Description:** This Python script uses the http.client library to send a POST request to the Deepgram API, converting a pre-recorded audio file (spacewalk.wav) hosted remotely into text. The output is then printed to the console.
 
 ### speech-to-text/prerecorded/remote/http-client/main.py
 
@@ -249,6 +297,14 @@ data = res.read()
 print(data.decode("utf-8"))
 ```
 
+## Text-to-Speech Conversion Using Deepgram API
+
+**Title:** Converting Text to Speech using Deepgram API
+
+**Code Sample:** text-to-speech/requests/main.py
+
+**Description:** This Python script uses the Deepgram API to convert a text string ("Hello, how can I help you today?") into speech. The resulting audio is saved as an MP3 file. The script uses the requests library to send a POST request, including the necessary headers and payload, to the Deepgram API.
+
 ### text-to-speech/requests/main.py
 
 ```python
@@ -273,6 +329,14 @@ else:
     print(f"Error: {response.status_code} - {response.text}")
 
 ```
+
+## Text-to-Speech Conversion using Deepgram API
+
+**Title:** Converting Text to Speech using Deepgram API and Python's http.client
+
+**Code Sample:** text-to-speech/http-client/main.py
+
+**Description:** This Python script uses the Deepgram API to convert a given text into speech. The output is saved as an mp3 file. The http.client library is used to make a POST request to the API.
 
 ### text-to-speech/http-client/main.py
 

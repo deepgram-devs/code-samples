@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API
+
+**Title:** Remote Speech-to-Text Conversion with Deepgram API
+
+**Code Sample:** speech-to-text/remote/main.rs
+
+**Description:** This Rust code sample uses the Deepgram API to convert speech to text. It sends a POST request to the API with an audio file URL and then retrieves and prints the transcription. The reqwest and serde libraries are used for HTTP requests and serialization, respectively.
+
 ### speech-to-text/remote/main.rs
 
 ```rust
@@ -32,6 +40,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+## Text-to-Speech Conversion Using Deepgram API with Reqwest Library
+
+**Title:** Converting Text to Speech Using Deepgram API and Reqwest in Rust
+
+**Code Sample:** text-to-speech/reqwest/main.rs
+
+**Description:** This Rust code uses the Deepgram API and the Reqwest library to convert a given text string to speech. The output is saved as an mp3 file. The program sends a POST request with the text to be converted in the request body, receives the audio data in the response, and writes it to a file.
 
 ### text-to-speech/reqwest/main.rs
 

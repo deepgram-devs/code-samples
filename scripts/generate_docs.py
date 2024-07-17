@@ -1,139 +1,126 @@
 import os
 import yaml
-import fnmatch
+from pathlib import Path
 import subprocess
-from deepdiff import DeepDiff
 
-def load_yaml_file(file_path):
-    if not os.path.exists(file_path):
-        return {}
-    with open(file_path, 'r') as file:
-        return yaml.safe_load(file)
+def read_yaml(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            print(f"Reading YAML file: {file_path}")
+            return yaml.safe_load(file)
+    except Exception as e:
+        print(f"Error reading YAML file {file_path}: {e}")
+        return None
 
-def generate_directory_structure(root_dir, base_dir_name):
-    directory_dict = {base_dir_name: {}}
+def write_yaml(file_path, data):
+    try:
+        with open(file_path, 'w') as file:
+            yaml.dump(data, file, default_flow_style=False)
+    except Exception as e:
+        print(f"Error writing YAML file {file_path}: {e}")
 
-    for root, dirs, files in os.walk(root_dir):
-        if base_dir_name not in root:
-            continue
-
-        path = root.split(os.sep)
-        base_index = path.index(base_dir_name)
-        sub_path = path[base_index:]
-        parent = directory_dict[base_dir_name]
-        for folder in sub_path[1:]:
-            parent = parent.setdefault(folder, {})
-        for file in files:
-            parent.setdefault('files', []).append(file)
-
-    return directory_dict
-
-def write_yaml_file(data, output_file):
-    with open(output_file, 'w') as file:
-        yaml.dump(data, file, default_flow_style=False)
-
-def get_target_files(config_path):
-    config = load_yaml_file(config_path)
-    if isinstance(config, dict):
-        return config.get('target_files', [])
-    else:
-        print(f"Error: Config file at {config_path} is not formatted correctly.")
-        return []
-
-def generate_readme_for_language(language_dir, target_patterns, documentation_dir, updated_files):
-    readme_path = os.path.join(documentation_dir, f"{os.path.basename(language_dir)}-readme.md")
-    original_content = None
-    if os.path.exists(readme_path):
-        with open(readme_path, 'r') as readme_file:
-            original_content = readme_file.read()
-
-    new_content = []
-    for root, _, files in os.walk(language_dir):
-        for file in files:
-            if file == 'project_structure.yaml':
-                continue  # Skip the project_structure.yaml file
-            if any(fnmatch.fnmatch(file, pattern) for pattern in target_patterns):
-                file_path = os.path.join(root, file)
-                relative_path = os.path.relpath(file_path, language_dir)
-                new_content.append(f"### {relative_path}\n\n")
-                new_content.append("```{}\n".format(os.path.basename(language_dir)))
-                with open(file_path, 'r') as code_file:
-                    new_content.append(code_file.read())
-                new_content.append("\n```\n\n")
-
-    new_content_str = ''.join(new_content)
-
-    if original_content != new_content_str or not os.path.exists(readme_path):  # Include newly created files
+def write_to_readme(language, content, documentation_path):
+    try:
+        readme_path = os.path.join(documentation_path, f'{language}-readme.md')
+        print(f"Writing content to: {readme_path}")
         with open(readme_path, 'w') as readme_file:
-            readme_file.write(new_content_str)
-        updated_files.append(readme_path)
+            readme_file.write(content)
+    except Exception as e:
+        print(f"Error writing to {readme_path}: {e}")
+
+def scrape_code_from_files(language_path, target_files, language):
+    content = ""
+    for root, _, files in os.walk(language_path):
+        for target in target_files:
+            for file_name in files:
+                if Path(file_name).match(target):
+                    file_path = os.path.join(root, file_name)
+                    relative_path = os.path.relpath(file_path, language_path)
+                    print(f"Scraping content from: {file_path}")
+                    try:
+                        with open(file_path, 'r') as code_file:
+                            file_content = code_file.read()
+                            content += f"### {relative_path}\n\n"
+                            content += f"```{language}\n{file_content}\n```\n\n"
+                    except Exception as e:
+                        print(f"Error reading file {file_path}: {e}")
+    return content
+
+def print_directory_tree(startpath):
+    for root, dirs, files in os.walk(startpath):
+        level = root.replace(startpath, '').count(os.sep)
+        indent = ' ' * 4 * (level)
+        print(f"{indent}{os.path.basename(root)}/")
+        subindent = ' ' * 4 * (level + 1)
+        for f in files:
+            print(f"{subindent}{f}")
+
+def process_language(language_path, documentation_path, language):
+    print(f"Directory structure for {language_path}:")
+    print_directory_tree(language_path)
+
+    config_path = os.path.join(language_path, 'config.yaml')
+    if os.path.exists(config_path):
+        config = read_yaml(config_path)
+        if config:
+            target_files = config.get('target_files', [])
+            if target_files:
+                content = scrape_code_from_files(language_path, target_files, language)
+                if content:
+                    write_to_readme(language, content, documentation_path)
+                else:
+                    print(f"No content scraped for language: {language}")
+            else:
+                print(f"No target files specified in config.yaml for {language_path}")
+        else:
+            print(f"Failed to read config.yaml in {language_path}")
+    else:
+        print(f"config.yaml not found in {language_path}")
+
+def reset_update_languages(update_languages_path):
+    with open(update_languages_path, 'r') as file:
+        lines = file.readlines()
+
+    with open(update_languages_path, 'w') as file:
+        for line in lines:
+            stripped_line = line.lstrip()
+            if stripped_line.startswith('- '):
+                indent = line[:len(line) - len(stripped_line)]
+                file.write(f'{indent}# - {stripped_line[2:].strip()}\n')
+            else:
+                file.write(line)
+
+    print(f"Reset {update_languages_path} with all languages commented out.")
 
 def main():
-    project_root = os.getcwd()
-    languages_dir = os.path.join(project_root, 'languages')
-    documentation_dir = os.path.join(project_root, 'documentation')
-    os.makedirs(documentation_dir, exist_ok=True)
-    old_project_structure_path = os.path.join(languages_dir, 'project_structure.yaml')
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_path = os.path.join(script_dir, '../languages')
+    documentation_path = os.path.join(script_dir, '../documentation')
+    update_languages_path = os.path.join(documentation_path, 'update_languages.yaml')
+    
+    update_config = read_yaml(update_languages_path)
+    if not update_config:
+        print("Failed to read update_languages.yaml or it is empty")
+        return
 
-    # Load the old project structure
-    old_project_structure = load_yaml_file(old_project_structure_path)
+    languages_to_update = update_config.get('languages', [])
+    if not languages_to_update:
+        print("No languages to update")
+        return
 
-    # Generate the new project structure
-    new_directory_structure = generate_directory_structure(project_root, 'languages')
-    new_project_structure = {'code-samples': new_directory_structure}
+    for language_path in languages_to_update:
+        if not language_path.startswith('#'):
+            full_language_path = os.path.join(base_path, language_path.strip())
+            language = os.path.basename(language_path.strip())
+            print(f"Processing language path: {full_language_path}")
+            process_language(full_language_path, documentation_path, language)
+    
+    # Call the generate_descriptions.py script
+    generate_descriptions_path = os.path.join(script_dir, 'generate_descriptions.py')
+    subprocess.run(['python', generate_descriptions_path])
 
-    # Compare the old and new project structures
-    diff = DeepDiff(old_project_structure, new_project_structure, ignore_order=True)
-    updated_languages = []
+    # Reset update_languages.yaml
+    reset_update_languages(update_languages_path)
 
-    if diff:
-        # Update the project_structure.yaml file
-        write_yaml_file(new_project_structure, old_project_structure_path)
-
-        # Identify updated or newly added languages
-        if 'dictionary_item_added' in diff or 'values_changed' in diff:
-            for item in diff.get('dictionary_item_added', []):
-                path_parts = item.split('[')
-                if len(path_parts) > 2 and path_parts[1].strip(']') == "'languages'":
-                    updated_languages.append(path_parts[2].strip("]'"))
-            for item in diff.get('values_changed', []):
-                path_parts = item.split('[')
-                if len(path_parts) > 2 and path_parts[1].strip(']') == "'languages'":
-                    updated_languages.append(path_parts[2].strip("]'"))
-
-    # Track updated files
-    updated_files = []
-
-    # Generate the readme files based on the new project structure and config files
-    for language in os.listdir(languages_dir):
-        language_dir = os.path.join(languages_dir, language)
-        if os.path.isdir(language_dir):
-            config_path = os.path.join(language_dir, 'config.yaml')
-            if os.path.exists(config_path):
-                target_patterns = get_target_files(config_path)
-                if target_patterns:
-                    generate_readme_for_language(language_dir, target_patterns, documentation_dir, updated_files)
-                else:
-                    print(f"Warning: No target patterns found for {language}.")
-            else:
-                print(f"Warning: config.yaml not found for {language}. Skipping.")
-        else:
-            print(f"Skipping non-directory item: {language}")
-
-    # Write the list of updated files to a temporary file
-    updated_files_path = os.path.join(project_root, 'updated_files.txt')
-    with open(updated_files_path, 'w') as file:
-        for updated_file in updated_files:
-            file.write(updated_file + '\n')
-
-    # Run the generate_descriptions.py script if there are updated files
-    if updated_files:
-        print("Running generate_descriptions.py to update descriptions...")
-        subprocess.run(['python', 'scripts/generate_descriptions.py'])
-
-     # Clear the updated_files.txt after processing
-    with open(updated_files_path, 'w') as file:
-        file.write('')
-        
 if __name__ == "__main__":
     main()

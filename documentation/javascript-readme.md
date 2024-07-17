@@ -1,3 +1,11 @@
+## Real-Time Speech-to-Text Conversion using Deepgram API and WebSocket
+
+**Title:** Real-Time Streaming Speech-to-Text Conversion
+
+**Code Sample:** speech-to-text/streaming/remote/axios/index.js
+
+**Description:** This code establishes a WebSocket connection to the Deepgram API for real-time speech-to-text conversion. It fetches a live audio stream from a remote URL (BBC World Service in this case), pipes this data through a PassThrough stream, and sends it to the Deepgram API for transcription. It handles various events like streaming data, end of stream, and errors. The transcribed results are logged to the console. The WebSocket connection is closed gracefully when the audio stream ends or the process is terminated.
+
 ### speech-to-text/streaming/remote/axios/index.js
 
 ```javascript
@@ -77,6 +85,14 @@ process.on("SIGINT", () => {
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with Local Audio File
+
+**Title:** Converting Local Audio File to Text using Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/local/https/index.js
+
+**Description:** This Node.js script uses the Deepgram API to convert a local audio file to text. It reads the audio file as binary data, creates a HTTPS request with the appropriate headers and options, and sends the request to the Deepgram API. The response is then parsed and logged.
+
 ### speech-to-text/prerecorded/local/https/index.js
 
 ```javascript
@@ -131,6 +147,14 @@ req.end();
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with Local Audio File
+
+**Title:** Converting Local Audio File to Text using Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/local/fetch/index.js
+
+**Description:** This JavaScript code uses the Deepgram API to convert a locally stored audio file into text. It reads the audio file as binary data, sends a POST request to the Deepgram API with the audio data, and then handles the response. It requires the fs module for file system operations and fetch for making the API request.
+
 ### speech-to-text/prerecorded/local/fetch/index.js
 
 ```javascript
@@ -179,6 +203,14 @@ fs.readFile(audioFilePath, (err, audioData) => {
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with Local Audio File and Axios
+
+**Title:** Converting Local Audio File to Text using Deepgram API and Axios
+
+**Code Sample:** speech-to-text/prerecorded/local/axios/index.js
+
+**Description:** This JavaScript code uses Deepgram's API and the Axios library to convert a local audio file into text. It reads the audio file as binary data, then sends a POST request to Deepgram's API, handling both the response and any errors.
+
 ### speech-to-text/prerecorded/local/axios/index.js
 
 ```javascript
@@ -209,6 +241,14 @@ axios
   });
 
 ```
+
+## Speech-to-Text Conversion with Remote Audio File using Deepgram API
+
+**Title:** Converting Remote Audio File to Text using Deepgram API
+
+**Code Sample:** speech-to-text/prerecorded/remote/fetch/index.js
+
+**Description:** This JavaScript code uses the Deepgram API to convert a remotely hosted audio file into text. It sends a POST request to the API with the audio file URL and logs the response or any errors.
 
 ### speech-to-text/prerecorded/remote/fetch/index.js
 
@@ -245,6 +285,14 @@ fetch(url, {
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with Axios and Remote Audio File
+
+**Title:** Converting Remote Audio File to Text using Deepgram API and Axios
+
+**Code Sample:** speech-to-text/prerecorded/remote/axios/index.js
+
+**Description:** The provided code uses the Axios library to send a POST request to the Deepgram API, converting a remote audio file (in this case, "spacewalk.wav") into text. The response data is then logged to the console.
+
 ### speech-to-text/prerecorded/remote/axios/index.js
 
 ```javascript
@@ -278,6 +326,14 @@ axios
 
 ```
 
+## Unsafe Buffer Allocation in Node.js
+
+**Title:** Buffer Allocation with Error Handling
+
+**Code Sample:** node_modules/buffer-alloc-unsafe/index.js
+
+**Description:** This script creates a function that allocates an unsafe buffer of a given size in Node.js. It includes error handling for non-numeric or negative size inputs. If the Buffer.allocUnsafe method is available, it uses that; otherwise, it falls back to the deprecated Buffer constructor.
+
 ### node_modules/buffer-alloc-unsafe/index.js
 
 ```javascript
@@ -301,6 +357,14 @@ module.exports = allocUnsafe
 
 ```
 
+## DOMException Polyfill in Node.js
+
+**Title:** Implementing DOMException Polyfill
+
+**Code Sample:** node_modules/node-domexception/index.js
+
+**Description:** This code provides a polyfill for the DOMException in a Node.js environment. It uses the worker_threads module to create a MessageChannel and post a message. If an error occurs and it's a DOMException, the global DOMException object is set to the constructor of the error.
+
 ### node_modules/node-domexception/index.js
 
 ```javascript
@@ -322,6 +386,14 @@ if (!globalThis.DOMException) {
 module.exports = globalThis.DOMException
 
 ```
+
+## Time Conversion in Node.js
+
+**Title:** Time Conversion Helper Module
+
+**Code Sample:** node_modules/ms/index.js
+
+**Description:** This JavaScript code is a module in Node.js that provides functionality to parse a string or number into milliseconds and format a number of milliseconds into a string. It supports both short and long formats for time units like milliseconds, seconds, minutes, hours, days, and years.
 
 ### node_modules/ms/index.js
 
@@ -481,6 +553,14 @@ function plural(ms, n, name) {
 
 ```
 
+## Handling WAVE Audio Files in Node.js
+
+**Title:** WAVE Audio File Reader and Writer
+
+**Code Sample:** node_modules/wav/index.js
+
+**Description:** This code provides classes for reading and writing WAVE audio files in Node.js. The `Reader` class reads WAVE files and outputs raw data, while the `Writer` and `FileWriter` classes create WAVE files from audio data.
+
 ### node_modules/wav/index.js
 
 ```javascript
@@ -523,6 +603,14 @@ exports.Writer = require('./lib/writer');
 exports.FileWriter = require('./lib/file-writer');
 
 ```
+
+## Fetch API Implementation in Node.js
+
+**Title:** Fetch API Implementation in Node.js
+
+**Code Sample:** node_modules/node-fetch/src/index.js
+
+**Description:** This code is a Node.js implementation of the Fetch API, providing a request API compatible with window.fetch. It handles HTTP/HTTPS requests and responses, supports data URIs, redirection, error handling, and content encoding such as gzip, deflate, and brotli. It also handles aborting requests, chunked transfer encoding, and has utilities for working with headers, requests, and responses.
 
 ### node_modules/node-fetch/src/index.js
 
@@ -947,6 +1035,14 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 
 ```
 
+## Proxy Configuration in Node.js
+
+**Title:** Determining Proxy Settings Based on Environment Variables
+
+**Code Sample:** node_modules/proxy-from-env/index.js
+
+**Description:** This code is a Node.js module that provides a function to determine the correct proxy settings for a given URL based on environment variables. It parses the URL, checks for a set proxy, and decides whether to use it based on the hostname and port. It also handles 'NO_PROXY' settings.
+
 ### node_modules/proxy-from-env/index.js
 
 ```javascript
@@ -1060,6 +1156,12 @@ function getEnv(key) {
 exports.getProxyForUrl = getProxyForUrl;
 
 ```
+
+**Title:** String Decoder in Node.js
+
+**Code Sample:** node_modules/string_decoder/index.js
+
+**Description:** This code is part of the Node.js 'string_decoder' module. It provides an interface for efficiently converting Buffer data to strings without breaking multi-byte characters. It handles different encodings such as 'utf8', 'ucs2', 'utf16le', and 'base64'. The code also includes methods to handle incomplete multi-byte characters.
 
 ### node_modules/string_decoder/index.js
 
@@ -1288,12 +1390,28 @@ function base64DetectIncompleteChar(buffer) {
 
 ```
 
+## Fluent-ffmpeg Library Import
+
+**Title:** Importing Fluent-ffmpeg Library in Node.js
+
+**Code Sample:** node_modules/fluent-ffmpeg/index.js
+
+**Description:** This code is used to import the Fluent-ffmpeg library in a Node.js project. Fluent-ffmpeg is a library that provides a fluent API to interact with the FFmpeg command-line tool, which is used for handling multimedia data.
+
 ### node_modules/fluent-ffmpeg/index.js
 
 ```javascript
 module.exports = require('./lib/fluent-ffmpeg');
 
 ```
+
+## Buffer Allocation in Node.js
+
+**Title:** Buffer Allocation and Filling in Node.js
+
+**Code Sample:** node_modules/buffer-alloc/index.js
+
+**Description:** This JavaScript code is used in Node.js for allocating a buffer of a specified size and filling it with a given value. It uses 'buffer-fill' and 'buffer-alloc-unsafe' modules. The code also includes error handling for invalid size inputs.
 
 ### node_modules/buffer-alloc/index.js
 
@@ -1332,6 +1450,14 @@ module.exports = function alloc (size, fill, encoding) {
 }
 
 ```
+
+## MIME Type Management in Node.js
+
+**Title:** Handling MIME Types with the mime-types Library
+
+**Code Sample:** node_modules/mime-types/index.js
+
+**Description:** This JavaScript code is part of the mime-types library, used for handling MIME types in Node.js. It provides functionalities to look up MIME types, determine the default charset for a MIME type, get the default extension for a MIME type, and create a full Content-Type header given a MIME type or extension. It uses the mime-db database for its operations.
 
 ### node_modules/mime-types/index.js
 
@@ -1527,6 +1653,13 @@ function populateMaps (extensions, types) {
 
 ```
 
+## Buffer Filling Operations in Node.js
+
+**Title:** Buffer Fill Operations in Node.js  
+**Code Sample:** node_modules/buffer-fill/index.js
+
+**Description:** This code provides functions for filling buffers in Node.js. It includes support for different data types (numbers, strings, buffers) and encodings. It also handles edge cases like out-of-range indexes and unrecognized encodings.
+
 ### node_modules/buffer-fill/index.js
 
 ```javascript
@@ -1646,6 +1779,14 @@ module.exports = fill
 
 ```
 
+## Asynckit Module Exportation in Node.js
+
+**Title:** Exporting Parallel, Serial, and SerialOrdered Functions with Asynckit
+
+**Code Sample:** node_modules/asynckit/index.js
+
+**Description:** This code exports three different functions (parallel, serial, and serialOrdered) from the Asynckit library in Node.js. This allows for asynchronous operations to be handled in different manners, improving efficiency and control over task execution.
+
 ### node_modules/asynckit/index.js
 
 ```javascript
@@ -1657,6 +1798,14 @@ module.exports =
 };
 
 ```
+
+## Stream Parser for Node.js
+
+**Title:** Stream Parser for Node.js
+
+**Code Sample:** node_modules/stream-parser/index.js
+
+**Description:** This code is a Stream Parser for Node.js. It extends either Writable or Transform stream instances/subclasses with parsing API methods: _bytes, _skipBytes, and _passthrough. The parser buffers, skips, or passes through a specified number of bytes and then calls a callback function. This module is useful for handling stream data in chunks, improving performance and memory usage in Node.js applications.
 
 ### node_modules/stream-parser/index.js
 
@@ -1962,6 +2111,14 @@ function trampoline (fn) {
 }
 
 ```
+
+## Follow Redirects in Node.js using Follow-Redirects Library
+
+**Title:** Follow Redirects in HTTP/HTTPS Requests
+
+**Code Sample:** node_modules/follow-redirects/index.js
+
+**Description:** This JavaScript code is part of the Follow-Redirects library used in Node.js for handling HTTP and HTTPS requests that result in a redirection. The library wraps the native http and https modules to follow HTTP redirect responses automatically. It provides options to limit the number of redirects, track redirect chain, and customize headers across redirects. It also handles errors for invalid URLs, too many redirects, and exceeding the maximum body length.
 
 ### node_modules/follow-redirects/index.js
 
@@ -2641,6 +2798,14 @@ module.exports.wrap = wrap;
 
 ```
 
+## Checking if an Object is an Array
+
+**Title:** Array Verification using isArray Function
+
+**Code Sample:** node_modules/isarray/index.js
+
+**Description:** This JavaScript code exports a function that checks if a given object is an array. It uses the built-in Array.isArray method, or, if that's not available, it uses the toString method of Object.prototype to compare the string representation of the object to '[object Array]'.
+
 ### node_modules/isarray/index.js
 
 ```javascript
@@ -2649,6 +2814,14 @@ module.exports = Array.isArray || function (arr) {
 };
 
 ```
+
+## Converting Data URI to Buffer in Node.js
+
+**Title:** Data URI to Buffer Conversion
+
+**Code Sample:** node_modules/data-uri-to-buffer/dist/index.js
+
+**Description:** This JavaScript code exports a function that converts a Data URI into a Buffer instance in Node.js. It parses the metadata from the URI, determines the encoding type, and returns a Buffer object with the decoded data. The Buffer object also includes properties for MIME type and character set.
 
 ### node_modules/data-uri-to-buffer/dist/index.js
 
@@ -2707,6 +2880,12 @@ export function dataUriToBuffer(uri) {
 export default dataUriToBuffer;
 //# sourceMappingURL=index.js.map
 ```
+
+**Title:** Blob Data Handling in Node.js
+
+**Code Sample:** node_modules/fetch-blob/index.js
+
+**Description:** This JavaScript code is a part of the 'fetch-blob' library used in Node.js for handling Blob data. It defines a Blob class with methods for creating new Blob objects, getting Blob size and type, converting Blob to text or ArrayBuffer, streaming Blob data, and slicing Blob data. It also includes a toIterator function for converting Blob or Uint8Array parts into an iterator. The Blob class is then exported for use in other modules.
 
 ### node_modules/fetch-blob/index.js
 
@@ -2964,6 +3143,12 @@ export default Blob
 
 ```
 
+**Title:** Unwrapping and Exporting Axios Module
+
+**Code Sample:** node_modules/axios/index.js
+
+**Description:** This JavaScript code is part of the Axios library, used for making HTTP requests from node.js or XMLHttpRequests from the browser. It unwraps the Axios default export into named exports, allowing users to import specific functions or objects from the library.
+
 ### node_modules/axios/index.js
 
 ```javascript
@@ -3013,6 +3198,14 @@ export {
 
 ```
 
+## Axios Platform Configuration in Node.js
+
+**Title:** Platform Configuration with Axios and Node.js
+
+**Code Sample:** node_modules/axios/lib/platform/index.js
+
+**Description:** This code sample imports and exports the platform-specific configuration for Axios, a promise-based HTTP client for the browser and Node.js. It combines the utilities and platform-specific settings into a single module.
+
 ### node_modules/axios/lib/platform/index.js
 
 ```javascript
@@ -3025,6 +3218,14 @@ export default {
 }
 
 ```
+
+## Browser-Specific Configurations for Axios
+
+**Title:** Axios Browser Configuration
+
+**Code Sample:** node_modules/axios/lib/platform/browser/index.js
+
+**Description:** This code exports browser-specific configurations for Axios, a promise-based HTTP client. It includes classes for working with URLSearchParams, FormData, and Blob objects, and recognizes various protocols.
 
 ### node_modules/axios/lib/platform/browser/index.js
 
@@ -3045,6 +3246,14 @@ export default {
 
 ```
 
+## Node.js Platform Configuration in Axios
+
+**Title:** Configuring Node.js Specific Settings in Axios
+
+**Code Sample:** node_modules/axios/lib/platform/node/index.js
+
+**Description:** This code is part of Axios library which configures Node.js specific settings. It imports and exports classes like URLSearchParams and FormData, and specifies the protocols to be used.
+
 ### node_modules/axios/lib/platform/node/index.js
 
 ```javascript
@@ -3062,6 +3271,14 @@ export default {
 };
 
 ```
+
+## Axios Default Configuration
+
+**Title:** Default Configuration and Utility Functions for Axios
+
+**Code Sample:** node_modules/axios/lib/defaults/index.js
+
+**Description:** This JavaScript file defines the default configuration and utility functions for Axios, a popular HTTP client for Node.js. It includes functions for transforming request and response data, handling timeouts, validating status codes, setting headers, and more. It also contains a safe stringification function to prevent JSON parsing errors.
 
 ### node_modules/axios/lib/defaults/index.js
 
@@ -3230,6 +3447,14 @@ export default defaults;
 
 ```
 
+## Buffer Conversion in Node.js
+
+**Title:** Buffer Conversion Utility
+
+**Code Sample:** node_modules/buffer-from/index.js
+
+**Description:** This code is a utility module for converting different types of data (like strings and ArrayBuffer objects) to Buffer objects in Node.js. It provides backward compatibility by checking if modern Buffer API methods are available, and if not, it uses the deprecated Buffer constructor.
+
 ### node_modules/buffer-from/index.js
 
 ```javascript
@@ -3308,6 +3533,13 @@ module.exports = bufferFrom
 
 ```
 
+## Implementation of WebSocket in Node.js
+
+**Title:** WebSocket Module Initialization in Node.js
+**Code Sample:** node_modules/ws/index.js
+
+**Description:** This code imports various components from the 'ws' library in Node.js and exports the WebSocket object. It sets up WebSocket streams, servers, receivers, and senders, making it ready for use in a Node.js application.
+
 ### node_modules/ws/index.js
 
 ```javascript
@@ -3327,6 +3559,14 @@ module.exports = WebSocket;
 
 ```
 
+## Detecting Electron Renderer Process
+
+**Title:** Electron Renderer Process Detection
+
+**Code Sample:** node_modules/debug/src/index.js
+
+**Description:** The code detects if the current process is an Electron renderer process. If it is, it exports the browser-specific debug module. Otherwise, it exports the Node.js-specific debug module.
+
 ### node_modules/debug/src/index.js
 
 ```javascript
@@ -3342,6 +3582,14 @@ if (typeof process !== 'undefined' && process.type === 'renderer') {
 }
 
 ```
+
+## Importing MIME Type Database
+
+**Title:** Importing MIME Type Database in Node.js
+
+**Code Sample:** node_modules/mime-db/index.js
+
+**Description:** This code exports the MIME (Multipurpose Internet Mail Extensions) type database from a JSON file. It's part of the mime-db module, which provides a comprehensive list of MIME types based on the data from IANA (Internet Assigned Numbers Authority).
 
 ### node_modules/mime-db/index.js
 
@@ -3360,6 +3608,14 @@ if (typeof process !== 'undefined' && process.type === 'renderer') {
 module.exports = require('./db.json')
 
 ```
+
+## Checking Execution Permissions in Node.js
+
+**Title:** Checking File Execution Permissions
+
+**Code Sample:** node_modules/isexe/index.js
+
+**Description:** This code checks if a file has execution permissions in a Node.js environment. It uses the 'fs' library and handles both Windows and Unix-like platforms. The code exports two functions, 'isexe' and 'isexe.sync', which asynchronously and synchronously check if a file is executable, respectively.
 
 ### node_modules/isexe/index.js
 
@@ -3424,6 +3680,14 @@ function sync (path, options) {
 
 ```
 
+## Text-to-Speech Conversion using Deepgram API
+
+**Title:** Converting Text to Speech using Node.js and Deepgram API
+
+**Code Sample:** text-to-speech/https/index.js
+
+**Description:** This code uses the Deepgram API to convert a string of text ("Hello, how can I help you today?") into speech. The resulting audio is saved as an MP3 file. Node.js's https and fs modules are used for making HTTP requests and handling the file system.
+
 ### text-to-speech/https/index.js
 
 ```javascript
@@ -3465,6 +3729,14 @@ req.write(data);
 req.end();
 
 ```
+
+## Text-to-Speech Conversion Using Deepgram API
+
+**Title:** Text-to-Speech Conversion and File Writing with Deepgram API
+
+**Code Sample:** text-to-speech/fetch/index.js
+
+**Description:** This script uses the Deepgram API to convert a text string to speech. It then saves the resulting audio data as an mp3 file. The script sends a POST request to the Deepgram API, handles the response, and writes the audio data to a file.
 
 ### text-to-speech/fetch/index.js
 
@@ -3515,6 +3787,14 @@ fetch(url, options)
   });
 
 ```
+
+## Text-to-Speech Conversion Using Deepgram API with Axios
+
+**Title:** Converting Text to Speech using Deepgram API and Axios
+
+**Code Sample:** text-to-speech/axios/index.js
+
+**Description:** This JavaScript code uses the Axios library to send a POST request to the Deepgram API, converting a given text string into speech. The speech is saved as an MP3 file. It uses stream response type to handle the audio data.
 
 ### text-to-speech/axios/index.js
 

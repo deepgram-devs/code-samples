@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API
+
+**Title:** Converting Pre-recorded Audio to Text using HTTP Client in C#
+
+**Code Sample:** speech-to-text/prerecorded/local/httpclient/Program.cs
+
+**Description:** This C# code uses the Deepgram API to convert a pre-recorded audio file to text. It reads the audio file as binary data, sends it to the Deepgram API, and then outputs the transcribed text. The code also handles errors and unsuccessful requests.
+
 ### speech-to-text/prerecorded/local/httpclient/Program.cs
 
 ```csharp
@@ -48,6 +56,14 @@ class Program
 
 ```
 
+## Assembly Attributes Setting for .NET Core Application
+
+**Title:** Setting Assembly Attributes in .NET Core
+
+**Code Sample:** speech-to-text/prerecorded/local/httpclient/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+
+**Description:** This code sets the assembly attributes for a .NET Core application. It specifies that the target framework for the application is .NET Core 7.0.
+
 ### speech-to-text/prerecorded/local/httpclient/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
 
 ```csharp
@@ -57,6 +73,14 @@ using System.Reflection;
 [assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v7.0", FrameworkDisplayName = ".NET 7.0")]
 
 ```
+
+## Assembly Information for Local_HttpClient
+
+**Title:** Assembly Information Configuration
+
+**Code Sample:** speech-to-text/prerecorded/local/httpclient/obj/Debug/net7.0/Local_HttpClient.AssemblyInfo.cs
+
+**Description:** This auto-generated code provides assembly information for a Local_HttpClient application. It includes details like company name, product name, assembly version, and configuration settings. Changes to this file may affect the application's behavior.
 
 ### speech-to-text/prerecorded/local/httpclient/obj/Debug/net7.0/Local_HttpClient.AssemblyInfo.cs
 
@@ -86,6 +110,14 @@ using System.Reflection;
 
 ```
 
+## Global Usings for HttpClient in Speech-to-Text Conversion
+
+**Title:** Global Namespace Declarations for Speech-to-Text Conversion
+
+**Code Sample:** speech-to-text/prerecorded/local/httpclient/obj/Debug/net7.0/Local_HttpClient.GlobalUsings.g.cs
+
+**Description:** This code defines global namespaces that are used throughout the application for a speech-to-text conversion program. It includes System, IO, Linq, HttpClient, and threading libraries.
+
 ### speech-to-text/prerecorded/local/httpclient/obj/Debug/net7.0/Local_HttpClient.GlobalUsings.g.cs
 
 ```csharp
@@ -99,6 +131,14 @@ global using global::System.Threading;
 global using global::System.Threading.Tasks;
 
 ```
+
+## Speech-to-Text Conversion using Deepgram API with HttpClient
+
+**Title:** Converting Pre-recorded Remote Audio to Text using HttpClient in C#
+
+**Code Sample:** speech-to-text/prerecorded/remote/httpclient/Program.cs
+
+**Description:** This C# program uses the HttpClient class to send a POST request to the Deepgram API. It converts a pre-recorded remote audio file (spacewalk.wav) into text and prints the response. If an error occurs, it prints the status code.
 
 ### speech-to-text/prerecorded/remote/httpclient/Program.cs
 
@@ -143,6 +183,14 @@ class Program
 
 ```
 
+## .NET 7.0 Assembly Attributes Declaration
+
+**Title:** Assembly Attributes for .NET 7.0
+
+**Code Sample:** speech-to-text/prerecorded/remote/httpclient/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+
+**Description:** This code is auto-generated and sets the target framework for a .NET 7.0 application. It uses the System.Runtime.Versioning.TargetFrameworkAttribute to specify the version and display name of the framework.
+
 ### speech-to-text/prerecorded/remote/httpclient/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
 
 ```csharp
@@ -152,6 +200,14 @@ using System.Reflection;
 [assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v7.0", FrameworkDisplayName = ".NET 7.0")]
 
 ```
+
+## Global Usings in .NET 7.0 for HttpClient in Speech-to-Text Conversion
+
+**Title:** Global Usings for Speech-to-Text Conversion with HttpClient
+
+**Code Sample:** speech-to-text/prerecorded/remote/httpclient/obj/Debug/net7.0/Remote_HttpClient.GlobalUsings.g.cs
+
+**Description:** This auto-generated code declares global usings for various .NET classes. It simplifies the code in the rest of the application by allowing these classes to be used without specifying their namespaces each time. The classes include System, IO, Linq, HttpClient, and threading-related classes, which are commonly used in speech-to-text conversion applications.
 
 ### speech-to-text/prerecorded/remote/httpclient/obj/Debug/net7.0/Remote_HttpClient.GlobalUsings.g.cs
 
@@ -166,6 +222,14 @@ global using global::System.Threading;
 global using global::System.Threading.Tasks;
 
 ```
+
+## Assembly Information for Remote HttpClient
+
+**Title:** Assembly Information for Remote HttpClient
+
+**Code Sample:** speech-to-text/prerecorded/remote/httpclient/obj/Debug/net7.0/Remote_HttpClient.AssemblyInfo.cs
+
+**Description:** This auto-generated code provides assembly information for a Remote HttpClient application. It includes details such as company, configuration, product, title, and version attributes. Any changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
 
 ### speech-to-text/prerecorded/remote/httpclient/obj/Debug/net7.0/Remote_HttpClient.AssemblyInfo.cs
 
@@ -194,6 +258,14 @@ using System.Reflection;
 
 
 ```
+
+## Text-to-Speech Conversion Using Deepgram API
+
+**Title:** Converting Text to Speech using Deepgram API in C#
+
+**Code Sample:** text-to-speech/httpclient/Program.cs
+
+**Description:** This C# code sample uses the Deepgram API to convert a text string into speech. The resultant audio is then saved as an MP3 file. The HttpClient class is used to send a POST request to the Deepgram API, and the response is streamed into a binary file. The API key and output file path are configurable.
 
 ### text-to-speech/httpclient/Program.cs
 
@@ -258,6 +330,14 @@ class Program
 }
 ```
 
+## .NET Core 7.0 Assembly Attributes Configuration
+
+**Title:** Setting Target Framework for .NET Core 7.0
+
+**Code Sample:** text-to-speech/httpclient/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+
+**Description:** This code sets the target framework for a .NET Core application to version 7.0 by using the TargetFrameworkAttribute in the System.Runtime.Versioning namespace.
+
 ### text-to-speech/httpclient/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
 
 ```csharp
@@ -267,6 +347,12 @@ using System.Reflection;
 [assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v7.0", FrameworkDisplayName = ".NET 7.0")]
 
 ```
+
+**Title:** Global Usings in Text-to-Speech HttpClient Application
+
+**Code Sample:** text-to-speech/httpclient/obj/Debug/net7.0/TTS_HttpClient.GlobalUsings.g.cs
+
+**Description:** This code defines global usings for a Text-to-Speech application using HttpClient. It includes libraries for handling system operations, I/O, LINQ, HTTP requests, and asynchronous programming.
 
 ### text-to-speech/httpclient/obj/Debug/net7.0/TTS_HttpClient.GlobalUsings.g.cs
 
@@ -281,6 +367,13 @@ global using global::System.Threading;
 global using global::System.Threading.Tasks;
 
 ```
+
+## Assembly Information for Text-to-Speech HttpClient
+
+**Title:** Assembly Attributes for TTS_HttpClient
+**Code Sample:** text-to-speech/httpclient/obj/Debug/net7.0/TTS_HttpClient.AssemblyInfo.cs
+
+**Description:** This auto-generated code provides assembly information for a Text-to-Speech HttpClient, including company, configuration, file version, informational version, product, title, and version attributes. It is generated by MSBuild WriteCodeFragment class.
 
 ### text-to-speech/httpclient/obj/Debug/net7.0/TTS_HttpClient.AssemblyInfo.cs
 

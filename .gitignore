@@ -8,3 +8,6 @@ target/
 
 **/bin/
 **/obj/
+
+#env
+.env

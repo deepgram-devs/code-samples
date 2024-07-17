@@ -1,3 +1,9 @@
+**Title:** Speech-to-Text Conversion using Deepgram API with PHP and cURL
+
+**Code Sample:** speech-to-text/prerecorded/local/curl/index.php
+
+**Description:** This PHP script uses the cURL library to send a POST request to the Deepgram API, converting a pre-recorded .wav audio file to text. The response from the API is then printed. If there's an error, it is displayed instead.
+
 ### speech-to-text/prerecorded/local/curl/index.php
 
 ```php
@@ -42,6 +48,14 @@ curl_close($ch);
 ?>
 
 ```
+
+## Speech-to-Text Conversion using Deepgram API with PHP
+
+**Title:** Converting Pre-recorded Remote Audio to Text with Deepgram API in PHP
+
+**Code Sample:** speech-to-text/prerecorded/remote/curl/index.php
+
+**Description:** This PHP script uses the Deepgram API to convert pre-recorded audio from a remote URL to text. It sends a POST request to the API with the audio file URL, receives the response in JSON format, and prints it. If an error occurs during the process, it prints the cURL error.
 
 ### speech-to-text/prerecorded/remote/curl/index.php
 
@@ -96,6 +110,14 @@ curl_close($ch);
 ?>
 
 ```
+
+## Text-to-Speech Conversion Using Deepgram API
+
+**Title:** Converting Text to Speech using Deepgram API in PHP
+
+**Code Sample:** text-to-speech/curl/index.php
+
+**Description:** This PHP script sends a request to Deepgram's API to convert text to speech. It uses the cURL library to make the request, passing the text "Hello, how can I help you today?" as JSON data. The API responds with an audio file which is saved as 'your_output_file.mp3'.
 
 ### text-to-speech/curl/index.php
 

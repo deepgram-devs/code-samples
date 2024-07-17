@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API with URLSession in Swift
+
+**Title:** Converting Pre-recorded Speech to Text with URLSession in Swift
+
+**Code Sample:** speech-to-text/prerecorded/local/urlsession/main.swift
+
+**Description:** This Swift code sample uses the Deepgram API to convert pre-recorded speech to text. It reads an audio file as binary data, creates a URLRequest object to set the request headers and body, then uses URLSession to perform the request and process the response.
+
 ### speech-to-text/prerecorded/local/urlsession/main.swift
 
 ```swift
@@ -57,6 +65,14 @@ RunLoop.main.run()
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with Swift
+
+**Title:** Converting Pre-recorded Remote Audio to Text using Deepgram API in Swift
+
+**Code Sample:** speech-to-text/prerecorded/remote/urlsession/main.swift
+
+**Description:** This Swift code sample demonstrates how to use the Deepgram API to convert a pre-recorded audio file from a remote URL to text. It makes a POST request to the Deepgram API, and the response is parsed and printed to the console.
+
 ### speech-to-text/prerecorded/remote/urlsession/main.swift
 
 ```swift
@@ -107,6 +123,14 @@ task.resume()
 RunLoop.main.run()
 
 ```
+
+## Text-to-Speech Conversion Using Deepgram API in Swift
+
+**Title:** Converting Text to Speech and Saving as MP3 File with Deepgram API
+
+**Code Sample:** text-to-speech/urlsession/main.swift
+
+**Description:** This Swift code uses the Deepgram API to convert a specified text string to speech, saving the resulting audio as an MP3 file. It creates a URL request, sends it via URLSession, and handles the response data, writing it to an MP3 file if successful.
 
 ### text-to-speech/urlsession/main.swift
 

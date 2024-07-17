@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API with HttpURLConnection
+
+**Title:** Converting Prerecorded Speech to Text with HttpURLConnection in Java
+
+**Code Sample:** speech-to-text/prerecorded/local/httpURLConnection/Main.java
+
+**Description:** This Java code uses HttpURLConnection to send an audio file to the Deepgram API, which then converts the speech in the audio file to text. The code handles connection setup, request configuration, audio file reading, and response processing.
+
 ### speech-to-text/prerecorded/local/httpURLConnection/Main.java
 
 ```java
@@ -72,6 +80,14 @@ public class Main {
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with OkHttpClient
+
+**Title:** Converting Pre-recorded Remote Audio to Text using Deepgram API and OkHttpClient
+
+**Code Sample:** speech-to-text/prerecorded/remote/okhttp3/Main.java
+
+**Description:** This Java code uses the Deepgram API and OkHttpClient to convert pre-recorded audio from a remote URL into text. It sends a POST request to the Deepgram API with the audio URL and API key, then prints the response or an error message.
+
 ### speech-to-text/prerecorded/remote/okhttp3/Main.java
 
 ```java
@@ -122,6 +138,14 @@ public class Main {
 
 ```
 
+## Text-to-Speech Conversion Using Deepgram API in Java
+
+**Title:** Text-to-Speech Conversion with Deepgram API
+
+**Code Sample:** text-to-speech/HttpClient/Main.java
+
+**Description:** This Java code uses the Deepgram API to convert a given text to speech. It sends a POST request with the text to be converted as a JSON payload. The response, which is an audio file, is saved in the specified output file. If the request fails, it prints the error message.
+
 ### text-to-speech/HttpClient/Main.java
 
 ```java
@@ -167,6 +191,14 @@ public class Main {
 }
 
 ```
+
+## Text-to-Speech Conversion using Deepgram API and OkHttp3 Library
+
+**Title:** Converting Text to Speech with Deepgram API and OkHttp3
+
+**Code Sample:** text-to-speech/okhttp3/Main.java
+
+**Description:** This Java code uses the Deepgram API and OkHttp3 library to convert a text string into speech. It sends a POST request to the Deepgram API with the text to be converted, and then saves the resulting audio file in mp3 format.
 
 ### text-to-speech/okhttp3/Main.java
 

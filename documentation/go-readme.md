@@ -1,7 +1,10 @@
-**Title:** Speech-to-Text Conversion with Local Audio File using Deepgram API
+## Speech-to-Text Conversion using Deepgram API with Local File
+
+**Title:** Sending Local Audio File to Deepgram for Speech-to-Text Conversion
+
 **Code Sample:** speech-to-text/prerecorded/local/net_http/main.go
 
-**Description:** This Go program uses the Deepgram API to convert a locally stored audio file into text. It opens the audio file, sends it to the Deepgram API, and prints out the text response.
+**Description:** This code opens a local audio file, reads its content, and sends a POST request to the Deepgram API for speech-to-text conversion. It handles errors in file opening, reading, and API request creation. The response from the API is printed out.
 
 ### speech-to-text/prerecorded/local/net_http/main.go
 
@@ -63,11 +66,13 @@ func main() {
 
 ```
 
-**Title:** Speech-to-Text Conversion with Remote Audio File using Deepgram API
+## Speech-to-Text Conversion using Deepgram API with a Remote File
+
+**Title:** Converting Remote Audio File to Text using Deepgram API
 
 **Code Sample:** speech-to-text/prerecorded/remote/net_http/main.go
 
-**Description:** This Go program uses the Deepgram API to convert speech to text from a remotely stored audio file. It sends a POST request with the URL of the audio file as payload, and prints the response from the API, which is the transcribed text.
+**Description:** This Go code demonstrates how to use the Deepgram API to convert a remote audio file (specifically a .wav file) to text. The audio file is sent to the Deepgram API via a POST request, and the resulting text is printed out.
 
 ### speech-to-text/prerecorded/remote/net_http/main.go
 
@@ -115,10 +120,11 @@ func main() {
 
 ```
 
-**Title:** Text-to-Speech Conversion using Deepgram API
+**Title:** Text-to-Speech Conversion Using Deepgram API in Go
+
 **Code Sample:** text-to-speech/net_http/main.go
 
-**Description:** This Go code snippet uses the Deepgram API to convert a text string to speech. It sends a POST request to the Deepgram API with the text to be converted. If the request is successful, it saves the response, which is an MP3 file of the spoken text, to the local system.
+**Description:** This Go code uses the Deepgram API to convert text to speech. It sends a POST request to the Deepgram API with a text payload and saves the returned audio data as an MP3 file. The API key is required for authentication.
 
 ### text-to-speech/net_http/main.go
 

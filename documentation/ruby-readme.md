@@ -1,3 +1,11 @@
+## Speech-to-Text Conversion using Deepgram API and HTTParty
+
+**Title:** Local Audio File Speech-to-Text Conversion
+
+**Code Sample:** speech-to-text/prerecorded/local/httparty/main.rb
+
+**Description:** This Ruby script uses the HTTParty library to send a local audio file to the Deepgram API for speech-to-text conversion. The script reads the audio file as binary data, and then sends it as a POST request to the Deepgram API. The resulting transcription is then printed to the console.
+
 ### speech-to-text/prerecorded/local/httparty/main.rb
 
 ```ruby
@@ -29,6 +37,14 @@ response = HTTParty.post(
 puts response.body
 
 ```
+
+## Speech-to-Text Conversion using Deepgram API with Ruby
+
+**Title:** Converting Pre-recorded Audio to Text using Net::HTTP in Ruby
+
+**Code Sample:** speech-to-text/prerecorded/local/net-http/main.rb
+
+**Description:** This Ruby script uses the 'net/http' library to send a POST request to Deepgram's API, converting a pre-recorded audio file to text. The script reads an audio file, sends it to the Deepgram API, and prints the response, which contains the transcribed text.
 
 ### speech-to-text/prerecorded/local/net-http/main.rb
 
@@ -66,6 +82,14 @@ puts response.body
 
 ```
 
+## Speech-to-Text Conversion using Deepgram API with HTTParty
+
+**Title:** Converting Pre-recorded Remote Audio to Text using Deepgram API and HTTParty
+
+**Code Sample:** speech-to-text/prerecorded/remote/httparty/main.rb
+
+**Description:** This Ruby script uses the HTTParty library to send a POST request to the Deepgram API, converting a pre-recorded remote audio file (spacewalk.wav) into text. The script defines the API endpoint, headers, and request body, and then outputs the response.
+
 ### speech-to-text/prerecorded/remote/httparty/main.rb
 
 ```ruby
@@ -92,6 +116,14 @@ response = HTTParty.post(url, headers: headers, body: body)
 # Output the response
 puts response.body
 ```
+
+## Speech-to-Text Conversion using Deepgram API with Ruby
+
+**Title:** Converting Pre-recorded Remote Audio to Text using Deepgram API and Ruby
+
+**Code Sample:** speech-to-text/prerecorded/remote/net-http/main.rb
+
+**Description:** This Ruby script sends a POST request to the Deepgram API to transcribe a pre-recorded audio file (spacewalk.wav) located at a remote URL. It sets up the required headers, sends the request, and prints the response body.
 
 ### speech-to-text/prerecorded/remote/net-http/main.rb
 
@@ -125,6 +157,14 @@ puts response.body
 
 ```
 
+## Text-to-Speech Conversion Using Deepgram API and HTTParty Library
+
+**Title:** Converting Text to Speech with Deepgram API and HTTParty
+
+**Code Sample:** text-to-speech/httparty/main.rb
+
+**Description:** This Ruby script uses the HTTParty library to send a POST request to the Deepgram API, converting a given text into speech. The output is saved as an MP3 file. If the request is successful, it will output 'File saved successfully', otherwise, it will display the error code and message.
+
 ### text-to-speech/httparty/main.rb
 
 ```ruby
@@ -151,6 +191,14 @@ else
 end
 
 ```
+
+## Text-to-Speech Conversion using Deepgram API in Ruby
+
+**Title:** Converting Text to Speech using Deepgram API in Ruby
+
+**Code Sample:** text-to-speech/net-http/main.rb
+
+**Description:** This code uses the Deepgram API to convert a given text into speech. The output is saved as an MP3 file. It uses the Net::HTTP library in Ruby to make HTTP requests. The API key for Deepgram is required for authentication.
 
 ### text-to-speech/net-http/main.rb
 
