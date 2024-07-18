@@ -4,7 +4,11 @@ This repository contains a collection of code samples which show how to make com
 
 These code examples do not use the Deepgram SDKs. If you would like to learn more about using Deepgram's SDKs, visit our [Developer Documentation](https://developers.deepgram.com/docs/deepgram-sdks).
 
-## Current Supported Languages
+## Getting Started
+
+Read the README.md file in each language folder to learn how to run the files in that folder.
+
+## Currently Supported Languages
 
 This is an Open Source project and we welcome contributions from the community. If you don't see your language of choice listed below, feel free to open a PR to add it.
 
@@ -19,10 +23,6 @@ This is an Open Source project and we welcome contributions from the community. 
 9. [Ruby](./languages/ruby/)
 10. [Rust](./languages/rust/)
 11. [Swift](./languages/swift/)
-
-## Getting Started
-
-Read the README.md file in each language folder to learn how to run the files in that folder.
 
 ## Development and Contributing
 
