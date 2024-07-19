@@ -2,7 +2,7 @@ languages:
   # - "c"
   # - "cpp"
   # - "csharp"
-  - "go"
+  # - "go"
   # - "java"
   # - "javascript"
   #  - "php"
