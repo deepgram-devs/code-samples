@@ -1,5 +1,13 @@
 # Go
 
+## Install Dependencies
+
+Navigate to the root of the `go` folder and run the following command:
+
+```bash
+go mod tidy
+```
+
 ## Update the Code
 
 Replace the placeholder code such as `DEEPGRAM_API_KEY` with your own information.
